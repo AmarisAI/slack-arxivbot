@@ -38,11 +38,11 @@ var formatArxivAsAttachment = function (arxivData, callback) {
     author_name: arxivData.authors.slice(0, 3).join(', '),
     title      : '[' + arxivData.id + '] ' + arxivData.title,
     title_link : arxivData.url,
-    text       : arxivData.summary.split(' ').slice(0, 30).join(' ') + ' ...'
+    text       : arxivData.summary.split(' ').slice(0, 40).join(' ') + ' ...'
   };
 
   if (arxivData.authors.length > 3) {
-    attachment.author_name += ' and others';
+    attachment.author_name += ', and others';
   }
 
   callback(null, attachment);
