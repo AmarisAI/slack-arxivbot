@@ -38,7 +38,8 @@ var formatArxivAsAttachment = function (arxivData, callback) {
     author_name: arxivData.authors.slice(0, 3).join(', '),
     title      : '[' + arxivData.id + '] ' + arxivData.title,
     title_link : arxivData.url,
-    text       : arxivData.summary.split(' ').slice(0, 40).join(' ') + ' ...'
+    text       : arxivData.summary.split(' ').slice(0, 40).join(' ') + ' ...',
+    fallback   : arxivData.title
   };
 
   if (arxivData.authors.length > 3) {
